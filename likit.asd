@@ -7,9 +7,10 @@
   :components ((:module "src"
                 :components
                 ((:file "likit")
-                 (:file "string")
                  (:file "path")
-                 (:file "list"))))
+                 (:file "list")
+                 (:file "help")
+                 (:file "system"))))
   :description ""
   :in-order-to ((test-op (test-op "likit/tests"))))
 
