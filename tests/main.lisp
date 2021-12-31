@@ -4,12 +4,12 @@
         :rove))
 (in-package :likit/tests)
 
-(deftest test-string
-  (testing "test split"
-           (ok (equal (split "a b c") '("a" "b" "c")))
-           (ok (equal (split "a;b;c" #\;) '("a" "b" "c"))))
-  (testing "test join"
-           (ok (equal (join " " '("a" "b" "c")) "a b c"))))
+;; (deftest test-string
+;;   (testing "test split"
+;;            (ok (equal (split "a b c") '("a" "b" "c")))
+;;            (ok (equal (split "a;b;c" #\;) '("a" "b" "c"))))
+;;   (testing "test join"
+;;            (ok (equal (join " " '("a" "b" "c")) "a b c"))))
 
 
 (deftest test-path
@@ -21,3 +21,12 @@
            (ok (folderp "."))
            (ng (folderp "###"))
            (ng (folderp "Makefile"))))
+
+(deftest test-system
+    (testing "command tester"
+             (ok (command-exists-p "echo"))
+             (ng (command-exists-p "likit")))
+    (testing "feature tester"
+             (ng (member :testing *features*))
+             (toggle-feature :testing t)
+             (ok (member :testing *features*))))

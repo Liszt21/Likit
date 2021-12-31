@@ -4,4 +4,4 @@
    ;; path
    :filep :folderp :folder-exists :path :map-child
    ;; system
-   :shell))
+   :shell :command-exists-p :toggle-feature))
