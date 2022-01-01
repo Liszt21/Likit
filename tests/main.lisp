@@ -11,6 +11,11 @@
 ;;   (testing "test join"
 ;;            (ok (equal (join " " '("a" "b" "c")) "a b c"))))
 
+(deftest test-core
+    (testing "core tester"
+             (ok (zerop (when-match ((a b c))
+                            ((a) 0)
+                            ((b) 1))))))
 
 (deftest test-path
   (testing "file tester"
@@ -30,3 +35,5 @@
              (ng (member :testing *features*))
              (toggle-feature :testing t)
              (ok (member :testing *features*))))
+
+

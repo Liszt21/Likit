@@ -7,6 +7,7 @@
   :components ((:module "src"
                 :components
                 ((:file "likit")
+                 (:file "core")
                  (:file "path")
                  (:file "list")
                  (:file "help")

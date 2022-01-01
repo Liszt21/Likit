@@ -1,6 +1,8 @@
 (defpackage likit
   (:use :cl)
   (:export
+   ;;core
+   :when-match
    ;; path
    :filep :folderp :folder-exists :path :map-child
    ;; system
