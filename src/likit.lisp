@@ -1,5 +1,5 @@
 (defpackage likit
-  (:use :cl)
+  (:use :cl :inferior-shell :alexandria)
   (:export
    ;;core
    :when-match

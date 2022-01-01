@@ -38,15 +38,3 @@
                     command)
             :ignore-error-status t)))))
     (zerop code)))
-
-(defun detect-features ()
-  "Detect features"
-  (cond
-   ((command-exists-p "yay") (toggle-feature :yay t))
-   ((command-exists-p "pacman") (toggle-feature :pacman  t))
-   ((command-exists-p "apt") (toggle-feature :apt  t))
-   ((command-exists-p "yum") (toggle-feature :yum  t))
-   ((command-exists-p "scoop") (toggle-feature :scoop t)))
-  (when (uiop:getenv "WSL_DISTRO_NAME") (toggle-feature :wsl t)))
-
-(detect-features)
